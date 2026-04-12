@@ -1,0 +1,36 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Empêche le défilement horizontal */
+}
+
+body {
+  background-image: url('../includes/images/1ok.webp'); /* REMPLACEZ PAR LE CHEMIN DE VOTRE IMAGE */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* L'image reste fixe pendant que le contenu défile */
+  background-repeat: no-repeat;
+}
+
+/* Vous pouvez ajouter un overlay sombre sur la section d'en-tête pour une meilleure lisibilité du texte */
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* Overlay noir semi-transparent */
+  z-index: -1; /* Placez-le sous le contenu du header */
+}
+
+/* Styles pour le contenu principal pour le faire ressortir */
+.content-area {
+  position: relative; /* Pour que le z-index fonctionne si besoin */
+  z-index: 10; /* Assure que le contenu est au-dessus de l'image de fond */
+}
+#main-content {
+    margin-top: 70px; /* Ajuste selon la hauteur de ton menu */
+}
+

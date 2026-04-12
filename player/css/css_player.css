@@ -1,0 +1,233 @@
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    min-height: 100vh;
+    color: white;
+}
+
+.audio-player {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    max-width: 520px;
+    margin: 2rem auto;
+}
+
+.progress-bar-container {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: #0d6efd;
+    width: 0;
+    transition: width 0.08s linear;
+}
+
+.btn-control {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    transition: all 0.2s;
+}
+
+.btn-control:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: scale(1.08);
+}
+
+.btn-control.active {
+    color: #0d6efd;
+}
+
+.song-select {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.song-select option {
+    background: #1e3c72;
+    color: white;
+}
+
+.secret-zone {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    opacity: 0;
+    z-index: 10;
+}
+
+
+@keyframes float-note-1 {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translateY(-20px) translateX(8px) rotate(5deg);
+        opacity: 0.6;
+    }
+}
+
+@keyframes float-note-2 {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0.25;
+    }
+
+    50% {
+        transform: translateY(-25px) translateX(-6px) rotate(-8deg);
+        opacity: 0.55;
+    }
+}
+
+@keyframes float-note-3 {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0.35;
+    }
+
+    50% {
+        transform: translateY(-18px) translateX(10px) rotate(6deg);
+        opacity: 0.65;
+    }
+}
+
+@keyframes float-note-4 {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0.28;
+    }
+
+    50% {
+        transform: translateY(-22px) translateX(-8px) rotate(-5deg);
+        opacity: 0.58;
+    }
+}
+
+.music-note {
+    position: fixed;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 2.5rem;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.note-1 {
+    top: 15%;
+    left: 8%;
+    animation: float-note-1 6s ease-in-out infinite;
+}
+
+.note-2 {
+    top: 25%;
+    right: 12%;
+    animation: float-note-2 5.5s ease-in-out infinite 1s;
+}
+
+.note-3 {
+    top: 45%;
+    left: 5%;
+    animation: float-note-3 7s ease-in-out infinite 2s;
+}
+
+.note-4 {
+    top: 60%;
+    right: 8%;
+    animation: float-note-4 6.5s ease-in-out infinite 0.5s;
+}
+
+.note-5 {
+    top: 35%;
+    left: 15%;
+    animation: float-note-1 5s ease-in-out infinite 3s;
+    font-size: 2rem;
+    opacity: 0.25;
+}
+
+.note-6 {
+    top: 70%;
+    right: 18%;
+    animation: float-note-2 6s ease-in-out infinite 1.5s;
+    font-size: 2.2rem;
+    opacity: 0.3;
+}
+
+
+
+/* Notes supplémentaires zone lecteur */
+.note-7 {
+    top: 8%;
+    left: 50%;
+    animation: float-note-3 5.5s ease-in-out infinite 0.8s;
+    font-size: 2rem;
+    opacity: 0.32;
+}
+
+.note-8 {
+    top: 12%;
+    left: 65%;
+    animation: float-note-1 6.2s ease-in-out infinite 2.2s;
+    font-size: 2.3rem;
+    opacity: 0.28;
+}
+
+.note-9 {
+    top: 10%;
+    left: 35%;
+    animation: float-note-2 5.8s ease-in-out infinite 1.3s;
+    font-size: 1.8rem;
+    opacity: 0.25;
+}
+
+.note-10 {
+    top: 5%;
+    right: 25%;
+    animation: float-note-4 6.8s ease-in-out infinite 0.3s;
+    font-size: 2.1rem;
+    opacity: 0.3;
+}
+
+<style>
+    /* From Uiverse.io by krlozCJ */
+    button {
+        border: none;
+        outline: none;
+        background-color: #3a4d8a;
+        padding: 10px 20px;
+        font-size: 12px;
+        font-weight: 700;
+        color: #fff;
+        border-radius: 5px;
+        transition: all ease 0.1s;
+        box-shadow: 0px 5px 0px 0px #5a6899;
+    }
+
+    button:active {
+        transform: translateY(5px);
+        box-shadow: 0px 0px 0px 0px #5a6899;
+    }
+</style>
